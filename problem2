@@ -1,0 +1,35 @@
+(a)
+import qiskit
+import numpy as np
+from qiskit import *
+from qiskit.visualization import plot_histogram, plot_bloch_vector , plot_bloch_multivector
+from math import sqrt, pi
+from qiskit import QuantumCircuit, execute
+q = QuantumRegister(2)
+c = ClassicalRegister(2)
+circuit = QuantumCircuit(q,c)
+circuit.h(q)
+circuit.measure(q,c)
+circuit.draw(output = 'mpl')
+simulator = Aer.get_backend('statevector_simulator')
+job = execute(circuit, simulator, shots = 1024)
+result = job.result()
+counts = result.get_counts()
+plot_histogram(counts)
+(b)
+circuit = QuantumCircuit(q,c)
+circuit.h(q[0])
+circuit.cx(0,1)
+circuit.measure(q,c)
+circuit.draw(output = 'mpl')
+simulator = Aer.get_backend('statevector_simulator')
+job = execute(circuit, simulator, shots = 1024)
+result = job.result()
+counts = result.get_counts()
+plot_histogram(counts)
+(c)
+#code has been attached in the report
+(d)
+#code has been attached in the report
+(e)
+#code has been attached in the report
