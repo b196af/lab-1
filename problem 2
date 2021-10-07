@@ -1,4 +1,4 @@
-(a)
+#(a)
 import qiskit
 import numpy as np
 from qiskit import *
@@ -16,7 +16,7 @@ job = execute(circuit, simulator, shots = 1024)
 result = job.result()
 counts = result.get_counts()
 plot_histogram(counts)
-(b)
+#(b)
 circuit = QuantumCircuit(q,c)
 circuit.h(q[0])
 circuit.cx(0,1)
@@ -27,9 +27,9 @@ job = execute(circuit, simulator, shots = 1024)
 result = job.result()
 counts = result.get_counts()
 plot_histogram(counts)
-(c)
+#(c)
 #code has been attached in the report
-(d)
+#(d)
 #code has been attached in the report
-(e)
+#(e)
 #code has been attached in the report
